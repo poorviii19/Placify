@@ -38,7 +38,7 @@ export default function CompanyProfile() {
     const fetchProfile = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await fetch('http://localhost:5000/api/profile/company', {
+        const response = await fetch('https://placify-1-n34n.onrender.com/api/profile/company', {
           headers: {
             'Authorization': `Bearer ${token}`,
           },
@@ -73,7 +73,7 @@ export default function CompanyProfile() {
     const fetchInternships = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await fetch('http://localhost:5000/api/internships/company/my-internships', {
+        const response = await fetch('https://placify-1-n34n.onrender.com/api/internships/company/my-internships', {
           headers: {
             'Authorization': `Bearer ${token}`,
           },
@@ -103,7 +103,7 @@ export default function CompanyProfile() {
     setSaving(true);
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:5000/api/profile/company', {
+      const response = await fetch('https://placify-1-n34n.onrender.com/api/profile/company', {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -156,7 +156,7 @@ export default function CompanyProfile() {
 
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:5000/api/profile/upload-picture', {
+      const response = await fetch('https://placify-1-n34n.onrender.com/api/profile/upload-picture', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,
