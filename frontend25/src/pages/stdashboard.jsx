@@ -146,7 +146,7 @@ export default function StudentDashboard() {
 		const token = localStorage.getItem('token');
 		if (!userId || !token) return;
 
-		socketRef.current = io('http://localhost:5000');
+		socketRef.current = io('https://placify-1-n34n.onrender.com');
 		socketRef.current.on('connect', () => {
 			socketRef.current.emit('register', userId);
 		});

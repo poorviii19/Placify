@@ -261,7 +261,7 @@ export default function CompanyDashboard() {
     
     // Define socket logic to use in conditional block
     const setupSocket = () => {
-        socketRef.current = io('http://localhost:5000');
+        socketRef.current = io('https://placify-1-n34n.onrender.com');
         
         socketRef.current.on('connect', () => {
           socketRef.current.emit('register', userId);
@@ -1823,7 +1823,7 @@ export default function CompanyDashboard() {
                         </button>
                         {applicant.studentId?.profile?.resume && (
                           <a
-                            href={`http://localhost:5000${applicant.studentId.profile.resume}`}
+                            href={`https://placify-1-n34n.onrender.com${applicant.studentId.profile.resume}`}
                             target="_blank"
                             rel="noopener noreferrer"
                             download
@@ -1888,7 +1888,7 @@ export default function CompanyDashboard() {
               {selectedCourseDetails.videos && selectedCourseDetails.videos.length > 0 ? (
                 <ul className="list-disc list-inside text-sm mt-2">
                   {selectedCourseDetails.videos.map((v, i) => (
-                    <li key={i}><a href={`http://localhost:5000${v}`} target="_blank" rel="noreferrer" className="text-blue-600 underline">{`Video ${i+1}`}</a></li>
+                    <li key={i}><a href={`https://placify-1-n34n.onrender.com${v}`} target="_blank" rel="noreferrer" className="text-blue-600 underline">{`Video ${i+1}`}</a></li>
                   ))}
                 </ul>
               ) : (
@@ -1958,7 +1958,7 @@ export default function CompanyDashboard() {
               {(selectedApplicant.studentId?.profile?.resume || selectedApplicant.studentId?.profile?.resumePath || selectedApplicant.studentId?.profile?.resumeText) && (
                 (() => {
                   const r = (selectedApplicant.studentId.profile.resume || selectedApplicant.studentId.profile.resumePath || '');
-                  const href = r && r.startsWith('http') ? r : (r ? `http://localhost:5000/${r.replace(/^\/+/, '')}` : null);
+                  const href = r && r.startsWith('http') ? r : (r ? `https://placify-1-n34n.onrender.com/${r.replace(/^\/+/, '')}` : null);
                   const resumeText = selectedApplicant.studentId?.profile?.resumeText || null;
                   return (
                     <div className="border-t pt-4">
@@ -2374,7 +2374,7 @@ function EnrolledStudentsList({ courseId }) {
               <div className="text-xs text-slate-600">{s.email || ''}{s.phone ? ` · ${s.phone}` : ''}</div>
             </div>
             {s.resume ? (
-              <a href={s.resume.startsWith('http') ? s.resume : `http://localhost:5000/${s.resume.replace(/^\/+/, '')}`} target="_blank" rel="noreferrer" className="text-xs text-blue-600 underline">View CV</a>
+              <a href={s.resume.startsWith('http') ? s.resume : `https://placify-1-n34n.onrender.com/${s.resume.replace(/^\/+/, '')}`} target="_blank" rel="noreferrer" className="text-xs text-blue-600 underline">View CV</a>
             ) : (
               <></>
             )}

@@ -78,7 +78,7 @@ export default function StudentProfile() {
           const profile = data.profile;
           
           console.log('Profile picture from DB:', profile.profilePicture);
-          const imageUrl = profile.profilePicture ? `http://localhost:5000${profile.profilePicture}` : null;
+          const imageUrl = profile.profilePicture ? `https://placify-1-n34n.onrender.com${profile.profilePicture}` : null;
           console.log('Constructed image URL:', imageUrl);
           
           setProfileData({
@@ -126,7 +126,7 @@ export default function StudentProfile() {
           });
 
           if (profile.resume) {
-            setCvFile({ name: 'Resume.pdf', url: `http://localhost:5000${profile.resume}` });
+            setCvFile({ name: 'Resume.pdf', url: `https://placify-1-n34n.onrender.com${profile.resume}` });
           }
         }
       } catch (error) {
@@ -298,7 +298,7 @@ export default function StudentProfile() {
       console.log('Upload response:', data);
 
       if (response.ok) {
-        const newImageUrl = `http://localhost:5000${data.profilePicture}`;
+        const newImageUrl = `https://placify-1-n34n.onrender.com${data.profilePicture}`;
         console.log('Image uploaded successfully. New URL:', newImageUrl);
         setProfileData(prev => ({ 
           ...prev, 
@@ -357,7 +357,7 @@ export default function StudentProfile() {
       if (response.ok) {
         setCvFile({ 
           name: data.fileName, 
-          url: `http://localhost:5000${data.resumePath}` 
+          url: `https://placify-1-n34n.onrender.com${data.resumePath}` 
         });
 
         // Auto-fill profile data from extracted CV information

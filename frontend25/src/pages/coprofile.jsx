@@ -49,7 +49,7 @@ export default function CompanyProfile() {
           const profile = data.profile;
           
           console.log('Company profile from DB:', profile);
-          const imageUrl = profile.profilePicture ? `http://localhost:5000${profile.profilePicture}` : null;
+          const imageUrl = profile.profilePicture ? `https://placify-1-n34n.onrender.com${profile.profilePicture}` : null;
           
           setProfileData({
             companyName: profile.companyName || "",
@@ -167,7 +167,7 @@ export default function CompanyProfile() {
       const data = await response.json();
 
       if (response.ok) {
-        const newImageUrl = `http://localhost:5000${data.profilePicture}`;
+        const newImageUrl = `https://placify-1-n34n.onrender.com${data.profilePicture}`;
         setProfileData(prev => ({ 
           ...prev, 
           image: newImageUrl
